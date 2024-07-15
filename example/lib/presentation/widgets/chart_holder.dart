@@ -42,7 +42,7 @@ class ChartHolder extends StatelessWidget {
         const SizedBox(height: 2),
         Container(
           decoration: const BoxDecoration(
-            color: AppColors.itemsBackground,
+            color: Colors.white,//AppColors.itemsBackground,
             borderRadius:
                 BorderRadius.all(Radius.circular(AppDimens.defaultRadius)),
           ),

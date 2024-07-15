@@ -1060,6 +1060,9 @@ class LineTouchTooltipData with EquatableMixin {
     this.tooltipBorder = BorderSide.none,
     this.showBubbleEnd = true,
     this.bubbleEndHeight = 6.0,
+    this.showShadow = true,
+    this.shadowColor = Colors.black38,
+    this.shadowElevation = 3.0,
   });
 
   /// Sets a rounded radius for the tooltip.
@@ -1106,6 +1109,10 @@ class LineTouchTooltipData with EquatableMixin {
 
   // Shows a speech-bubble like end on the bottom of the tooltip
   final bool showBubbleEnd;
+
+  final bool showShadow;
+  final Color? shadowColor;
+  final double shadowElevation;
 
   /// Used for equality check, see [EquatableMixin].
   @override
