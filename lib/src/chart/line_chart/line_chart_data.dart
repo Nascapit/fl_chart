@@ -1058,6 +1058,8 @@ class LineTouchTooltipData with EquatableMixin {
     this.showOnTopOfTheChartBoxArea = false,
     this.rotateAngle = 0.0,
     this.tooltipBorder = BorderSide.none,
+    this.showBubbleEnd = true,
+    this.bubbleEndHeight = 6.0,
   });
 
   /// Sets a rounded radius for the tooltip.
@@ -1098,6 +1100,12 @@ class LineTouchTooltipData with EquatableMixin {
 
   // /// Retrieves data for setting background color of the tooltip.
   final GetLineTooltipColor getTooltipColor;
+
+  // height of the bubble end
+  final double bubbleEndHeight;
+
+  // Shows a speech-bubble like end on the bottom of the tooltip
+  final bool showBubbleEnd;
 
   /// Used for equality check, see [EquatableMixin].
   @override

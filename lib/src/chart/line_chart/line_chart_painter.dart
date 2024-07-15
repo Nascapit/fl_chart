@@ -1073,6 +1073,17 @@ class LineChartPainter extends AxisChartPainter<LineChartData> {
       tooltipHeight,
     );
 
+    final offsetRect = Rect.fromPoints(rect.topLeft, Offset(rect.bottomRight.dx, rect.bottomRight.dy));
+    final path = Path()
+      ..addRRect(RRect.fromRectAndRadius(offsetRect, Radius.circular(offsetRect.height / 5)))
+      ..addPolygon([
+        Offset(offsetRect.bottomCenter.dx - tooltipData.bubbleEndHeight, offsetRect.bottomCenter.dy),
+        Offset(offsetRect.bottomCenter.dx, offsetRect.bottomCenter.dy + tooltipData.bubbleEndHeight),
+        Offset(offsetRect.bottomCenter.dx + tooltipData.bubbleEndHeight, offsetRect.bottomCenter.dy),
+      ], true,);
+
+    canvasWrapper.drawPath(path, Paint()..color = _bgTouchTooltipPaint.color);
+
     if (tooltipData.fitInsideHorizontally) {
       if (rect.left < 0) {
         final shiftAmount = 0 - rect.left;
